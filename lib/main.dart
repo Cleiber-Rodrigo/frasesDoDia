@@ -4,7 +4,7 @@ import 'dart:math';
 void main(){
   //O método runApp é usada para rodar o App
   runApp(MaterialApp( //O widget MaterialApp fornece um layout orientado ao 'material design', que é uma linguagem de design
-    home: Home(), //Esse atributo home é onde é especificado qual será a primeira tela a ser exibida no App
+    home: Home(), //Especificado qual será a primeira tela a ser exibida no App
     debugShowCheckedModeBanner: false, //Colocamos false para esconder a mensagem de debug
   ));
 }
@@ -12,7 +12,7 @@ void main(){
 class Home extends StatefulWidget { //Statefulwidget é um widget que possui um estado mutável.
   const Home({Key? key}) : super(key: key);
 
-  @override //Esse método createState é usado para retornar a classe _HomeState
+  @override 
   State<Home> createState() => _HomeState();
 }
 
@@ -36,8 +36,8 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( //Cria o esqueleto do App
-      appBar: AppBar( //Cria a barra superior
+    return Scaffold( //Crio o esqueleto do App
+      appBar: AppBar( //Crio a barra superior
         backgroundColor: Colors.green, //Define a cor da barra superior
       title: Text( //Cria o Título que fica na barra superior e abaixo temos algumas formatações nesse título
         "Frases do dia",
@@ -48,8 +48,8 @@ class _HomeState extends State<Home> {
         ),
       ),
       ),
-      body: Center( //Aqui temos o corpo do App, o Center centraliza o Container
-        child: Container( // O Container limita a tela do smartphone
+      body: Center( //Aqui temos o corpo do App
+        child: Container( 
           padding: EdgeInsets.all(20), //Espaçamento interno do container
           child: Column( //Column é um widget usado para colocar ítens um abaixo do outro
             mainAxisAlignment: MainAxisAlignment.spaceEvenly, //Alinhamento no eixo Y no caso do Column

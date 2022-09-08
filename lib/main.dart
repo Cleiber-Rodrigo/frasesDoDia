@@ -2,14 +2,16 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 void main(){
-  //O método runApp é usada para rodar o App
-  runApp(MaterialApp( //O widget MaterialApp fornece um layout orientado ao 'material design', que é uma linguagem de design
-    home: Home(), //Especificado qual será a primeira tela a ser exibida no App
-    debugShowCheckedModeBanner: false, //Colocamos false para esconder a mensagem de debug
+  //O método runApp é usada para rodar o App.  O widget MaterialApp fornece um layout orientado ao 'material design', que é uma linguagem de design
+  runApp(MaterialApp( 
+    //Especificado qual será a primeira tela a ser exibida no App
+    home: Home(),
+    //Colocamos false para esconder o banner de debug
+    debugShowCheckedModeBanner: false, 
   ));
 }
-//Home é a nossa classe principal
-class Home extends StatefulWidget { //Statefulwidget é um widget que possui um estado mutável.
+//Home é a nossa classe principal.   Statefulwidget é um widget que possui um estado mutável.
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   @override 
@@ -36,10 +38,14 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( //Crio o esqueleto do App
-      appBar: AppBar( //Crio a barra superior
-        backgroundColor: Colors.green, //Define a cor da barra superior
-      title: Text( //Cria o Título que fica na barra superior e abaixo temos algumas formatações nesse título
+    //Crio o esqueleto do App
+    return Scaffold( 
+      //Crio a barra superior
+      appBar: AppBar( 
+        //Define a cor da barra superior
+        backgroundColor: Colors.green, 
+        //Cria o Título que fica na barra superior e abaixo temos algumas formatações nesse título
+      title: Text( 
         "Frases do dia",
         style: TextStyle(
           color: Colors.white,
@@ -48,14 +54,20 @@ class _HomeState extends State<Home> {
         ),
       ),
       ),
-      body: Center( //Aqui temos o corpo do App
+      //Aqui temos o corpo do App
+      body: Center( 
         child: Container( 
-          padding: EdgeInsets.all(20), //Espaçamento interno do container
-          child: Column( //Column é um widget usado para colocar ítens um abaixo do outro
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly, //Alinhamento no eixo Y no caso do Column
-            crossAxisAlignment: CrossAxisAlignment.center, //Alinhamento no eixo X no caso da Column
+          //Espaçamento interno do container
+          padding: EdgeInsets.all(20),
+          //Column é um widget usado para colocar ítens um abaixo do outro
+          child: Column( 
+            //Alinhamento no eixo Y no caso do Column 
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+             //Alinhamento no eixo X no caso da Column
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset("imagens/logo.png"), //Inserindo imagens
+              //Inserindo imagens
+              Image.asset("imagens/logo.png"), 
               Text(
                 "$frase",
                 style: TextStyle(
@@ -64,7 +76,8 @@ class _HomeState extends State<Home> {
                   fontStyle: FontStyle.italic,
                 ),
               ),
-              RaisedButton( //Inserindo um botão
+              //Inserindo um botão
+              RaisedButton( 
                 color: Colors.lightGreen,
                 child: Text(
                   "Nova frase",
@@ -73,7 +86,8 @@ class _HomeState extends State<Home> {
                     fontSize: 20
                   ),
                 ),
-                  onPressed: _gerarFrases, //Definimos que ao pressionar esse botão, vamos chamar o método _gerarFrases
+                //Definimos que ao pressionar esse botão, vamos chamar o método _gerarFrases
+                  onPressed: _gerarFrases, 
               ),
             ],
           ),
